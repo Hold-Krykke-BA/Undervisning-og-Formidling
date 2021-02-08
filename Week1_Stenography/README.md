@@ -13,20 +13,20 @@
 ### Rúni
 
 ### Camilla
-* #### Datetime stamp
+* **Datetime stamp**
   * 07-02-2021 10.30
-* #### Problem being working on
+* **Problem being working on**
   * Start of assignment, find out in broad terms how to solve the assignment
-What is currently your frustration
-Not knowing how to solve the assignment or what language to use
-When you were last in contact with your team-mates
-Yesterday, we agreed to start today
-When you expect to be done with this micro-task
-Within an hour
-How long did it take to do
-35 minutes
-Which false leads were taken
-Ended up reading about how to hide messages in images in python at first
+* **What is currently your frustration**
+  * Not knowing how to solve the assignment or what language to use
+* **When you were last in contact with your team-mates**
+  * Yesterday, we agreed to start today
+* **When you expect to be done with this micro-task**
+  * Within an hour
+* **How long did it take to do**
+  * 35 minutes
+* **Which false leads were taken**
+  * Ended up reading about how to hide messages in images in python at first
 
 Datetime stamp
 07-02-2021 11.10
