@@ -27,7 +27,7 @@
   * 35 minutes
 * **Which false leads were taken**
   * Ended up reading about how to hide messages in images in python at first
-
+---
 * **Datetime stamp**
   * 07-02-2021 11.10
 * **Problem being working on**
