@@ -7,7 +7,10 @@
 * History Rúni
 
 ## List of the 3 biggest stumbling blocks
+* **Forståelse af selve opgaven og hvordan den skulle gribes an** 
 
+* **Forståelse af diverse fremgooglede tutorials** 
+* **Python environments** 
 
 ## Brief log as explained in the slides
 ### Rúni
