@@ -74,7 +74,6 @@
   - (Same) https://www.boiteaklou.fr/Steganography-Least-Significant-Bit.html
 - **When you expect to be done with this micro-task:**
   - Unknown. Hard to grasp.
-
 - **How long did it take to do:**
   - Started this specific task 12:45. Had a 45 minute break. ~1½ hour.
 - **What misunderstandings arose:** 
