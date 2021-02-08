@@ -16,9 +16,6 @@
 * **Not utilizing partnership** 
   * It took just short of three hours to find the first word of the solution. In this time we did not discuss findings much more than choice of coding language and assignment interpretation.
 
-* **Python environments** 
-  * `(Missing)`
-
 ## Brief log as explained in the slides
 ### Rúni  
 
@@ -198,7 +195,7 @@
 * **Datetime stamp**
   * 07-02-2021 17.50
 * **Problem being working on**
-  * Talked with teammate who found a tutorial he made some progress on, I’m going to try that to
+  * Talked with teammate who found a [tutorial](https://www.boiteaklou.fr/Steganography-Least-Significant-Bit.html) he made some progress on, I’m going to try that to
 * **What is currently your frustration**
   * N/A
 * **When you were last in contact with your team-mates**
