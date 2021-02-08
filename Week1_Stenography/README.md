@@ -4,7 +4,7 @@
 
 ## List of all search queries and  list all visited pages
 * [History Camilla](https://github.com/Hold-Krykke-BA/Undervisning-og-Formidling/blob/main/Week1_Stenography/chrome_history_camilla.json)
-* History Rúni
+* [History Rúni](/chrome_history_runi.csv)
 
 ## List of the 3 biggest stumbling blocks
 * **Forståelse af selve opgaven og hvordan den skulle gribes an** 
@@ -14,6 +14,50 @@
 
 ## Brief log as explained in the slides
 ### Rúni
+Datetime stamp: 12:00
+Problem being working on: Initial investigation on Steganography / best approach
+When you were last in contact with your team-mates: 1 minute ago
+When you expect to be done with this micro-task: 30-40 minutes
+How long did it take to do: 45 minutes
+What misunderstandings arose: Spent far longer trying out different methods than actual investigation
+Which micro-experiments were done: byte reading from image, base64 encoding/decoding, openCV framework
+Which false leads were taken: all - no results so far
+---
+Datetime stamp: 12:45
+Problem being working on: solution
+What is currently your frustration: interpreting task hints such as conversion & blue values. Converting back and forth, reading (x,y) values, etc.
+When you were last in contact with your team-mates: 12
+URL of example or idea you are trying out: Link
+When you expect to be done with this micro-task: Unknown.
+How long did it take to do X: 
+---
+Datetime stamp: 13:30
+Problem being working on: solution
+What is currently your frustration: Same
+When you were last in contact with your team-mates: 12
+URL of example or idea you are trying out: Link
+When you expect to be done with this micro-task: Unknown.
+How long did it take to do X: 
+---
+Datetime stamp: 14:45
+Problem being working on: Solution
+What is currently your frustration: Found a solution without understanding it. Result is returned backwards. Cannot alter parameters to return proper order without missing the proper byte order
+When you were last in contact with your team-mates: 13.30
+URL of example or idea you are trying out: Same as before
+When you expect to be done with this micro-task:
+
+How long did it take to do: Started this specific task 12:45. Had a 45 minute break. ~1½ hour.
+What misunderstandings arose. Bits, bytes, base64, ascii, rgba - which are needed, and how to convert between them.
+Which micro-experiments were done: Knowing that the message should be found in the blue part of the first width row I changed my traversing and thought process. I kept hitting the same results until I reversed from end to start. (I thought I already looked at the correct the LSB)
+Which false leads were taken: Looking at the height of the image too. Stupid solutions from google, too.
+---
+Datetime stamp: 15.11
+Problem being working on: Where to reverse?
+What is currently your frustration: Understanding the code I stitched together. Traversing bytes and bits, it is seemingly random where I chose to reverse the reading order, in order to get the result either backwards or “frontwards”.
+When you were last in contact with your team-mates: 15.00
+URL of example or idea you are trying out: Same
+When you expect to be done with this micro-task: Unknown. I have to go now, but will have to continue by close reading the code and cleaning it up. Currently ~20 lines.
+
 
 ### Camilla
 * **Datetime stamp**
