@@ -40,7 +40,7 @@
   * Within an hour
 * **How long did it take to do**
   * 60 min
-
+---
 * **Datetime stamp**
   * 07-02-2021 12.15
 * **Problem being working on**
@@ -49,7 +49,7 @@
   * 12.00, we decided to each look for a solution since we can’t pair program.
 * **When you expect to be done with this micro-task**
   * Within an hour
-
+---
 * **Datetime stamp**
   * 07-02-2021 13.15
 * **Problem being working on**
@@ -60,7 +60,7 @@
   * No clue
 * **How long did it take to do**
   * 60 minutes
-
+---
 * **Datetime stamp**
   * 07-02-2021 14.30
 * **Problem being working on**
@@ -75,7 +75,7 @@
   * Taking a break after 60 minutes
 * **Which false leads were taken**
   * Many, no working results so far
-
+---
 * **Datetime stamp**
   * 07-02-2021 17.15
 * **Problem being working on**
@@ -90,7 +90,7 @@
   * 35 minutes
 * **Which false leads were taken**
   * Many, no working results so far
-
+---
 * **Datetime stamp**
   * 07-02-2021 17.50
 * **Problem being working on**
@@ -105,3 +105,4 @@
   * 20 minutes
 * **Which false leads were taken**
   * None, the assignment is done
+---
