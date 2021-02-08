@@ -2,7 +2,7 @@
 
 * Link to description [1.5 Homework Assignment](https://datsoftlyngby.github.io/soft2021spring/UFO/week-05/#1-introduction-to-exploration-and-presentation)
 
-## List of all search queries and  list all visited pages
+## List of all search queries and list of all visited pages
 * [History Camilla](https://github.com/Hold-Krykke-BA/Undervisning-og-Formidling/blob/main/Week1_Stenography/chrome_history_camilla.json)
 * [History Rúni](chrome_history_runi.csv)
 
