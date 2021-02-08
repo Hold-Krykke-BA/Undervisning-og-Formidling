@@ -7,10 +7,17 @@
 * [History Rúni](chrome_history_runi.csv)
 
 ## List of the 3 biggest stumbling blocks
-* **Forståelse af selve opgaven og hvordan den skulle gribes an** 
+* **Properly understanding (reading) the assignment and how to tackle it** 
+  * Spending more time on figuring out potential solutions than understanding the actual issue (and the hints given) caused time spent on unrelated / unsuccesful implementations. As an example, Rúni had more than 250 lines of code from different solutions using several frameworks and whatnot. Shortly after reading the assignment properly it became easier to narrow down the search inquiries and ultimately led to the solution.
 
-* **Forståelse af diverse fremgooglede tutorials** 
+* **Domain knowledge** 
+  * We have not worked much in this field (image analysis) and spent much time on investigating bits, bytes, little-endian, least significant bit, image analysis, coding languages, frameworks and stupid google solutions.
+  
+* **Not utilizing partnership** 
+  * It took just short of three hours to find the first word of the solution. In this time we did not discuss findings much more than choice of coding language and assignment interpretation.
+
 * **Python environments** 
+  * `(Missing)`
 
 ## Brief log as explained in the slides
 ### Rúni  
