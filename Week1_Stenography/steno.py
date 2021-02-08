@@ -5,9 +5,9 @@ image = Image.open('7fe3c3f6-Stego.png')
 extracted = ''
 
 pixels = image.load()
-for z in range(0, image.height):
-    for x in range(0, image.width):
-        r, g, b, a = pixels[x, z]
+for i in range(0, image.height):
+    for j in range(0, image.width):
+        r, g, b, a = pixels[j, i]
         extracted += bin(b)[-1]
 
 chars = []
@@ -19,3 +19,4 @@ for i in range(int(len(extracted)/8)):
 
 secret = ''.join(chars)
 print(secret)
+# Congratulations, this is the secret message of the UFO class! (no, not 42)
