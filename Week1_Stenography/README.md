@@ -196,7 +196,7 @@
 * **Datetime stamp**
   * 07-02-2021 17.50
 * **Problem being working on**
-  * Talked with teammate who found a [tutorial](https://www.boiteaklou.fr/Steganography-Least-Significant-Bit.html) he made some progress on, I’m going to try that to
+  * Talked with Rúni who found a [tutorial](https://www.boiteaklou.fr/Steganography-Least-Significant-Bit.html) he made some progress on, I’m going to try that to
 * **What is currently your frustration**
   * N/A
 * **When you were last in contact with your team-mates**
