@@ -1,0 +1,49 @@
+\lipsum[5] \cite{einstein}. 
+
+\subsection{Billede og caption}
+\label{sec:1.1}
+\lipsum[10]
+
+\begin{figure}[H]
+    \centering
+    \caption*{Flot illustration med tekst foroven}
+    \includegraphics[width = 0.8\textwidth ]{figures/this_is_fine.png}
+    \caption{Og tekst forneden. Ingen grund til panik. \cite{menabrea}}
+    \label{fig:fine}
+\end{figure}
+
+\subsection{Flere billeder og henvisninger!}
+\label{sec:1.2}
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{figures/pepe_study.png}
+  \caption{Study hard}
+  \label{fig:study}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{figures/pythonk.png}
+  \caption{Get very lost}
+  \label{fig:thonk}
+\end{subfigure}
+\caption{En figur med to billeder!}
+\label{fig:two_img}
+\end{figure}
+
+Se i figur~\ref{fig:two_img} på side~\pageref{fig:two_img} (lige oven for) for en grundig illustration af hvordan arbejdet med at forstå \LaTeX\ er. 
+
+\subsubsection{Subsubsections, paragraphs, subparagraphs}
+\label{sec:1.2.1}
+\paragraph{Paragraf}
+\lipsum[2]
+\subparagraph{Subparagraf}
+\lipsum[2]
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+\subsection{Lister i mange former}
+Så skal der testes lister. Først en unordered list med bullet-points
+\begin{itemize}
+  \item CMDR Rigmor køber snart en Krait Phantom
+  \item Herefter sættes der kurs mod Sagittarius A*
+\end{itemize}
+
+\vspace{1cm}
+Så skal der testes ordered lists: 
+\begin{enumerate}
+  \item Der skal findes et navn til det nye Starship.
+  \item Måske en navn fra et andet spil?
+\end{enumerate}
+
+
+\vspace{1cm}
+Testing af alternative "bullets".
+\begin{itemize}
+ \item  Default item label for entry one
+ \item[$\blacksquare$]  Default item label for entry two
+ \item[$\square$]  Custom item label for entry three
+\end{itemize}
+
+
+\vspace{1cm}
+Så skal der testes lister i lister. Her er en god blanding af listesymbol, samt unordered underlister osv. Great fun with lists!: 
+ \renewcommand{\labelenumii}{\Roman{enumii}}
+ \begin{enumerate}
+   \item Køb en Krait Phantom
+   \item Outfit for max jump-range. Husk enginnering og guardian tech.
+   \begin{enumerate}
+     \item Husk enginnering og guardian tech.
+     \item Find et navn, gerne fra et andet spil.
+     \begin{enumerate}
+       \item Plot en rute.
+       \item Tjek for POI på vejen.
+       \begin{itemize}
+         \item Dobbelttjek at alt er i orden!
+         \item Tag afsted mod Sagittarius A*.
+       \end{itemize}
+     \end{enumerate}
+ \end{enumerate}
+ \end{enumerate}
+
+\subsection{Tables i mange former}
+\paragraph{Paragraf med Tables}er simpelthen bare bedste form for paragraffer! Not loving kæmpehullet efter paragraftitlen dog. Anyway, nu kommer der tables!
+
+
+\begin{center}
+    \begin{tabular}[H]{ |c|c|c| }
+        \hline
+        \multicolumn{3}{|c|}{Planets we love!} \\
+        \hline
+        Mercury & Venus & Earth \\ 
+        Mars & Jupiter & Saturn \\  
+        Uranus & Neptune  & Pluto (I am planet!)\\   
+        \hline
+    \end{tabular}
+\label{tab:planets}
+\end{center}
+
+\subparagraph{Subaragraph}
+\lipsum[2]
+\\
+\\
+Tabel \ref{table:systems} viser en oversigt over alle planeterne (og én falsk) i vores solsystem. Dog ikke på en specielt hensigtsmæssig måde, da inddelingen med de arbitrære tre kolonner er underlig.
+\vspace{0.5cm}
+
+\begin{table}[H]
+    \caption{\textbf{Multirow table med left, right, center alignment}}
+    \begin{center}
+        \begin{tabular}{ |l|c|r| } 
+            \hline
+            \multicolumn{3}{|c|}{\textbf{Steder der skal besøges}} \\
+            \hline
+            Systemnavn & Main POI & Kommentar \\
+            \hline
+            \multirow{3}{5cm}{Eorl Auwsy SY-Z d13-3468} & ABC 1 H & \multirow{3}{3cm}{Tre Guardian ruin sites} \\ 
+            & ABC 3 C &  \\ 
+            & ABC 3 C &  \\ 
+            \hline
+            \multirow{2}{5cm}{Stuemeae FG-Y d7561} & Stuemeae FG-Y d7561 & Earth-like world \\
+            & Explorer's Anchorage & Deep Space Outpost \\ 
+            \hline
+        \end{tabular}
+        \caption{Interessante systemer. \cite{edsm}}
+        \label{table:systems}
+    \end{center}
+\end{table}

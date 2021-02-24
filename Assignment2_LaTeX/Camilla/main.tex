@@ -1,0 +1,123 @@
+\documentclass[12pt,oneside,a4paper,danish]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin2, utf8]{inputenc}
+\usepackage[english, main=danish]{babel}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{titlesec}
+\usepackage{titling}
+\usepackage[framed, numbered]{matlab-prettifier}
+\usepackage{changepage}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{caption}
+\usepackage{tocloft}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{comment}
+\usepackage{lscape}
+\usepackage{booktabs,caption}
+\usepackage[english]{nomencl}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{lipsum}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\DeclareMathOperator{\arctg}{arctg}
+\pagestyle{fancy}
+\fancyhf{}
+
+\setlength{\parindent}{2em}
+\title{\LaTeX\ Bachelor Template} 
+\makeatletter\let\Title\@title\makeatother
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{leftmargin=1.5cm,label = Step \arabic*:}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\rhead{\nouppercase{\rightmark}}
+\lhead{\Title}
+\setlength\headheight{16pt}
+\setlength{\footskip}{50pt}
+\cfoot{\thepage}
+
+%%%%%
+\begin{document}
+\pagenumbering{roman} 
+\input{sections/frontpage.tex}
+
+\newpage
+\section{Todo liste} \label{todo}
+\input{sections/todo.tex}
+
+\newpage
+\tableofcontents
+\thispagestyle{fancy} 
+
+\newpage
+\pagenumbering{arabic} 
+\fancyfoot[C]{Page \thepage\ of \pageref{EndOfText}}
+
+\newpage
+\section{Introduktion æ ø å Æ Ø Å} \label{ch1}
+\input{sections/introduction.tex} 
+
+\newpage
+\section{Lister og Tables} \label{ch2}
+\input{sections/listsandtables.tex}
+
+\newpage
+\section{Code listings} \label{ch3}
+\input{sections/code.tex}
+
+\newpage
+\section{Math is hard!} \label{ch4}
+\input{sections/math.tex}
+
+\newpage
+\section*{Unummereret Section}
+Kommer heller ikke med i indholdsfortegnelsen! 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newpage
+% \section{NEW SECTION} \label{NAME}
+% \input{sections/NAME.tex} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{EndOfText}
+
+\newpage
+\pagenumbering{Roman} 
+\addcontentsline{toc}{section}{List of Figures}
+\fancyfoot[C]{Page \thepage\ of \pageref{endOfDoc}}
+
+\newpage
+\listoffigures
+\thispagestyle{fancy}
+
+\newpage
+\addcontentsline{toc}{section}{List of Tables}
+\listoftables
+\thispagestyle{fancy}
+
+\newpage
+\addcontentsline{toc}{section}{References}
+\bibliography{document.bib} 
+\bibliographystyle{ieeetr}
+
+\newpage
+\section{Appendix A} \label{ch6}
+
+\label{endOfDoc}
+\end{document}
