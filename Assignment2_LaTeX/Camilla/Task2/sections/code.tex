@@ -1,30 +1,19 @@
-\subsection{Made up Java code}
-\definecolor{codegreen}{HTML}{7fa195}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{HTML}{776391}
-\definecolor{backcolour}{rgb}{255,255,255}
-\definecolor{keywords}{HTML}{a8753b}
+\subsection{Sample Java code}
 
-\lstdefinestyle{mystyle}{
-  backgroundcolor=\color{backcolour},   commentstyle=\color{codegreen},
-  keywordstyle=\color{keywords},
-  numberstyle=\tiny\color{codegray},
-  stringstyle=\color{codepurple},
-  breakatwhitespace=false,         
-  breaklines=true,                 
-  captionpos=b,                    
-  keepspaces=true,                 
-  numbers=left,                    
-  numbersep=5pt,                  
-  showspaces=false,                
-  showstringspaces=false,
-  showtabs=false,                  
-  tabsize=2
+\lstset{
+tabsize = 4, 
+showstringspaces = false, 
+numbers = left, 
+commentstyle = \color{gray}, 
+keywordstyle = \color{blue}, 
+stringstyle = \color{olive}, 
+rulecolor = \color{white}, 
+basicstyle = \small \ttfamily , 
+breaklines = true, 
+numberstyle = \small,
 }
 
-\lstset{style=mystyle}
-
-\begin{lstlisting}[language=Java, caption=Java example]
+\begin{lstlisting}[language = Java , firstnumber = last , escapeinside={(*@}{@*)}]
 package starshipfunctionality;
 
 public class Starship implements DrawListener {

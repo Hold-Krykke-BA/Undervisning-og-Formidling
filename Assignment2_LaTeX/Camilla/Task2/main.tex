@@ -1,10 +1,11 @@
-\documentclass[12pt,oneside,a4paper,danish]{article}
+\documentclass[10pt,oneside,a4paper,danish]{article}
 \usepackage[T1]{fontenc}
 \usepackage[latin2, utf8]{inputenc}
 \usepackage[english, main=danish]{babel}
 \usepackage{subcaption}
 \usepackage{listings}
 \usepackage{color}
+\usepackage[margin=3cm]{geometry}
 \usepackage{titlesec}
 \usepackage{titling}
 \usepackage[framed, numbered]{matlab-prettifier}
@@ -32,6 +33,7 @@
 \usepackage[colorinlistoftodos]{todonotes}
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{courier} %% Sets font for listing as Courier.
 
 \DeclareMathOperator{\arctg}{arctg}
 \pagestyle{fancy}
@@ -58,7 +60,8 @@
 \input{sections/frontpage.tex}
 
 \newpage
-\section{Todo liste} \label{todo}
+% \section{Todo liste} \label{todo}
+\todototoc
 \input{sections/todo.tex}
 
 \newpage
