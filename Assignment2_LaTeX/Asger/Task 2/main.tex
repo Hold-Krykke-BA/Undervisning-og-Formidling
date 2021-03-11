@@ -1,0 +1,203 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage[export]{adjustbox}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{amssymb}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage[english]{babel}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+\usepackage[nottoc]{tocbibind}
+\usepackage{todonotes} % Change to \usepackage[disable]{todonotes} to hide all notes without deleting them
+
+\title{Latex Assignment \\
+ \large Exploration and Presentation}
+\author{Asger Thorsboe Lundblad}
+\date{February 2021}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\listoffigures
+
+\section{Testing æ å ø}
+Dealing with Æ, æ, Å, å, Ø and ø.
+
+\section{Dealing with images}
+\FloatBarrier
+\includegraphics[width=\textwidth, height=10cm]{Alphabet41393.jpg}
+
+\begin{figure}[h]
+    \centering
+    \caption{Caption over image}
+    \includegraphics[width=12cm, height=10cm]{Alphabet41393.jpg}
+    \caption{Caption under image}
+    \label{fig:fig1}
+\end{figure}
+
+Praesent blandit blandit mauris. Praesent
+lectus tellus, aliquet aliquam, luctus a, egestas a, turpis. Mauris 
+lacinia loremsit amet ipsum. Nunc quis urna dictum turpis accumsan 
+semper.In figure~\ref{fig:fig2} on page~\pageref{fig:fig2}
+
+\begin{figure}[h]
+\centering
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=4cm, height=2cm]{Alphabet41393.jpg}
+        \caption{Caption1}
+        \label{fig:fig2}
+    \end{subfigure}
+    \begin{subfigure}{0.3\textwidth}
+        \includegraphics[width=4cm, height=2cm]{Alphabet41393.jpg}
+        \caption{Caption2}
+        \label{fig:fig3}
+    \end{subfigure}
+    \caption{Caption for figure with 2 images}
+\end{figure}
+\FloatBarrier
+
+\section{Dealing sections}
+\todo{Move sections to their only file for include}
+Praesent blandit blandit mauris. Praesent
+lectus tellus, aliquet aliquam, luctus a, egestas a, turpis. Mauris 
+lacinia loremsit amet ipsum. Nunc quis urna dictum turpis accumsan 
+semper.
+\subsection{Dealing with text}
+\paragraph{This is a paragraph test}
+\subparagraph{This is a subparagraph test}
+
+Praesent blandit blandit mauris. Praesent
+lectus tellus, aliquet aliquam, luctus a, egestas a, turpis. Mauris 
+lacinia loremsit amet ipsum. Nunc quis urna dictum turpis accumsan 
+semper.In figure~\ref{fig:fig2} on page~\pageref{fig:fig2}
+
+\section*{Dealing with unnumbered sections}
+Praesent blandit blandit mauris. Praesent
+lectus tellus, aliquet aliquam, luctus a, egestas a, turpis. Mauris 
+lacinia loremsit amet ipsum. Nunc quis urna dictum turpis accumsan 
+semper.
+
+\input{inputSection}
+
+\include{includeSection}
+
+\section{Dealing with lists}
+
+\paragraph{unordered list}
+\renewcommand{\labelitemi}{$\blacksquare$}
+\begin{itemize}
+  \item One entry in the list
+  \item Another entry in the list
+\end{itemize}
+
+\paragraph{ordered list}
+\begin{enumerate}
+  \item The labels consists of sequential numbers.
+  \item The numbers starts at 1 with every call to the enumerate environment.
+\end{enumerate}
+
+
+\paragraph{nested list}
+\renewcommand{\labelitemi}{\textbullet}
+\begin{enumerate}
+   \item The labels consists of sequential numbers.
+   \begin{itemize}
+     \item The individual entries are indicated with a black dot, a so-called bullet.
+     \item The text in the entries may be of any length.
+   \end{itemize}
+   \item The numbers starts at 1 with every call to the enumerate environment.
+\end{enumerate}
+
+\section{Dealing with tables}
+\todo{make more advanced tables}
+The table \ref{table:table1} is an example of referenced \LaTeX elements.
+\begin{table}[h]
+\centering
+\begin{tabular}{ | l | c | c | c | r |}
+\hline
+\multicolumn{5}{|c|}{Header} \\
+\hline
+Col1 & Col2 & Col3 & Col4 & Col5 \\ [0.5ex]
+\hline
+ cell1 & cell2 & cell3 & cell4 & cell5\\ 
+ cell6 & cell7 & cell8 & cell9 & cell10\\  
+ cell11 & cell12 & cell13 & cell14 & cell5 \\
+ cell16 & cell17 & cell18 & cell19 & cell20\\
+ cell21 & cell22 & cell23 & cell24 & cell25\\
+ \hline
+\end{tabular}
+\caption{Table to test captions and labels}
+\label{table:table1}
+\end{table}
+
+\section{Dealing with code}
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\lstset{frame=tb,
+  language=Java,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+\begin{lstlisting}[language=Java]
+class Simple{  
+    public static void main(String args[]){  
+     System.out.println("Hello Java");  
+    }  
+}  
+\end{lstlisting}
+
+\section{Dealing with math equations}
+
+The well known Pythagorean theorem \(x^2 + y^2 = z^2\) was 
+proved to be invalid for other exponents. 
+Meaning the next equation has no integer solutions:
+\[ x^n + y^n = z^n \]
+As you see, the way the equations are displayed depends on the delimiter, in this case [ ] and ( ).
+
+\[ \frac12 \]
+
+\[ \frac{2}{x+2} \]
+
+\[ \frac{1+\frac{1}{x}}{3x + 2} \]
+
+\[ \sqrt{3} \]
+
+\[ \sqrt{x+\frac{1}{2}} \]
+
+\[ \sqrt[3]{3} \]
+
+\[ \sum_{i=1}^{\infty}\frac{1}{i} \]
+
+\[ \prod_{n=1}^5\frac{n}{n-1} \]
+
+\url{https://artofproblemsolving.com/wiki/index.php/LaTeX:Commands}
+
+\section{Dealing Bibliography}
+Let's cite! The Einstein's journal paper \cite{einstein} and the shakespeare1974riverside's book \cite{shakespeare1974riverside} are physics related items. 
+
+\printbibliography[heading=bibintoc,
+title={Bibliography Reference}]
+
+\end{document}
