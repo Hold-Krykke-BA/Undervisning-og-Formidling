@@ -3,6 +3,7 @@
 ## Task 1
 Find requirements of bachelor thesis. Write a LATEX document explaining your
 findings. Document your sources.
+[/Task1/ba_requirements.pdf](Task1/ba_requirements.pdf)
 
 ## Task 2
 Produce a template (in LATEX, of course) that you can use in your bachelor
