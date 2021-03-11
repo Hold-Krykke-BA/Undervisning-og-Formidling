@@ -1,0 +1,78 @@
+\documentclass{article}
+\usepackage{url} %bibtex
+\usepackage{hyperref} %bibtex
+\setcounter{secnumdepth}{0} % remove section numbers from ToC, sections are level 1
+\usepackage{csquotes} %quotation styles
+\usepackage{cite}
+
+
+\title{Requirements of bachelor thesis}
+\date{} % remove date from \maketitle
+\author{Rúni VN}
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\emph{Find requirements of bachelor thesis.\\ 
+Write a \LaTeX\  document explaining your findings.\\
+Document your sources.}
+
+\tableofcontents
+
+\section{Discussion}
+\textbf{The only supplied information} was that some answers could be found in the curriculum.
+
+\section{Procedure}
+\textbf{Looking at the curriculum}, not much was to be found, as it and most of its references were rewritings of legal documents from \url{retsinformation.dk}.
+Instead, I looked to its useful references, Google, my study group and descriptions of the bachelor assignment from last year.\\
+\vspace{5mm}
+It was easy to find guides on \emph{how to write a bachelor thesis} - but that was not the goal here, it was the requirements for one.\\
+Finding answers was harder than I thought, especially because I wanted to find answers related to the bachelor thesis of Software Development (rather than another study).
+
+\section{Findings}
+
+\blockquote[\cite{cphCurriculum,deaCurriculum}][\emph{The bachelor’s project must document the student’s understanding of and ability to
+reflect on the practices of the profession and the use of theory and methods in
+relation to a real-life problem. The problem statement, which must be central to the
+programme and profession, is formulated by the student, possibly in collaboration
+with a private or public company. The academy approves the problem statement.}]
+
+\textbf{The only formal requirements} I managed to find are the following:
+
+\begin{itemize}
+    \item [$\textendash$] The project may be done in groups of up to 4 people.
+    \item [$\textendash$] The maximum page count for the bachelor report is given by the formular \(maxPageCount = 40 + (20 \cdot numberOfStudents)\)
+    \item [$\textendash$] The report can be written in either Danish or English
+    \item [$\textendash$] The report should contain a thorough description of the work that
+    has been done during the bachelor project, as well as an evaluation and reflection
+    on the work.
+    \cite{pdf_kickoff_2020}
+\end{itemize}
+
+\textbf{Additionally}, there are a number of legal documents and writings related to the bachelor programme itself, of which the following is noteworthy:
+\begin{itemize}
+    \item [$\textendash$] The bachelor thesis project is set to 15 ECTS. Earlier revisions show the option between 10, 15 or 20 ECTS. \cite{retsinf_1162}
+    \item [$\textendash$] Formulation and spelling is part of the evaluation too:
+\end{itemize}
+
+\blockquote[\cite{retsinf_18}][\emph{\S 37. Stk. 4. Ved bedømmelsen af professionsbachelorprojekt, afsluttende eksamensprojekt eller afgangsprojekt skal der ud over det faglige indhold også lægges vægt på den studerendes formulerings- og staveevne.}]
+
+\textbf{On top of that}, the curriculum states that there is an actual manual available:\\
+
+\blockquote[\cite{cphCurriculum}][\emph{(...)  For more see the Manual for the Bachelor Project for the study programme.}]
+
+\underline{I am, however, unable to find it.}
+
+\section{Conclusion}
+\textbf{It seems that there aren't many hard requirements}, neither from the government nor the school.\\
+The government allots either 10, 15 or 20 ECTS point to the bachelor project and the school generally supplies guidelines over rules.\\
+Honorable mention, which didn't make it into this paper: The kick-off slides for last semesters bachelor project: \cite{kickoffSlides}
+
+\end{center}
+
+%\renewcommand\refname{\vskip -1cm} % Remove "references" from bibliography
+\bibliographystyle{apalike}
+\bibliography{ba_requirements} 
+
+\end{document}
