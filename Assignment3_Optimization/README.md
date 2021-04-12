@@ -11,17 +11,17 @@ See [assignment-03.pdf](assignment-03.pdf).
 
 ## Solution
 
-### Task 1
+### Task 1.1
 ```diff
 - todo short text about how we completed this
 ```
 
-### Task 2
+### Task 1.2
 ```diff
 - todo short text about how we completed this
 ```
 
-### Task 3
+### Task 1.3
 ```diff
 - todo short text about how we completed this
 ```
