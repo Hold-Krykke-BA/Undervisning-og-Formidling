@@ -1,5 +1,3 @@
-package cphbusiness.ufo.letterfrequencies;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -19,7 +17,7 @@ import static java.util.stream.Collectors.toMap;
 public class Main {
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        String fileName = "/Users/kasper/GITHUB/ufo/letterfrequencies/src/main/resources/FoundationSeries.txt";
+        String fileName = "src/main/resources/FoundationSeries.txt";
         Reader reader = new FileReader(fileName);
         Map<Integer, Long> freq = new HashMap<>();
         tallyChars(reader, freq);
