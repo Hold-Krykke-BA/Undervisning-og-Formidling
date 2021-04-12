@@ -9,6 +9,8 @@ import java.util.Map;
 import static java.util.stream.Collectors.toMap;
 
 /**
+ * This is the original program supplied by the school. The only change is the fileName.
+ *
  * Frequency analysis Inspired by
  * https://en.wikipedia.org/wiki/Frequency_analysis
  *
