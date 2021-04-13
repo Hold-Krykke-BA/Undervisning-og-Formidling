@@ -1,6 +1,8 @@
 import utils.Timer;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 import static java.util.stream.Collectors.toMap;
@@ -29,9 +31,13 @@ public class Program {
         }
     }
 
-    private void tallyChars_optimized(Reader reader, Map<Integer, Long> freq) throws IOException {
-        int b;
-        while ((b = reader.read()) != -1) {
+    private void tallyChars_optimized(String reader, Map<Integer, Long> freq)  {
+//        int b;
+//        while ((b = reader.read()) != -1) {
+//            freq.put(b, freq.getOrDefault(b, 0L) + 1);
+//        }
+        for (int i = 0; i < reader.length(); i++) {
+            int b = reader.charAt(i);
             freq.put(b, freq.getOrDefault(b, 0L) + 1);
         }
     }
@@ -67,9 +73,9 @@ public class Program {
 //        }
     }
 
-    public double Mark5(boolean isOptimized) throws IOException {
-        int n = 10, count = 1, totalCount = 0;
-        double dummy = 0.0, runningTime = 0.0, st = 0.0, sst = 0.0;
+    public void Mark5(boolean isOptimized) throws IOException {
+        int n = 10, count = 1;
+        double runningTime = 0.0, st = 0.0, sst = 0.0;
         do {
             count *= 2;
             st = sst = 0.0;
@@ -82,22 +88,21 @@ public class Program {
                 double time = runningTime * 1e9 / count;
                 st += time;
                 sst += time * time;
-                totalCount += count;
             }
             double mean = st / n, sdev = Math.sqrt((sst - mean * mean * n) / (n - 1));
             System.out.printf("%6.1f ns +/- %8.2f %10d%n", mean, sdev, count);
             // runningTime < 0.25 <-- original value in below while loop
-        } while (runningTime < 8 && count < Integer.MAX_VALUE / 2);
-        return dummy / totalCount;
+        } while (runningTime < 1 && count < Integer.MAX_VALUE / 2);
     }
     
     // Optimized program
     private void runOptimized() throws IOException {
         //call optimized methods from here, just as in runOriginal() further above
         String fileName = "src/main/resources/FoundationSeries.txt";
-        Reader reader = new BufferedReader(new FileReader(fileName));
+//        Reader reader = new BufferedReader(new FileReader(fileName));
         Map<Integer, Long> freq = new HashMap<>();
-        tallyChars_optimized(reader, freq);
+        Files.lines(Paths.get(fileName)).forEach(line -> tallyChars_optimized(line, freq));
+//        tallyChars_optimized(reader, freq);
         print_tally_optimized(freq);
     }
 
