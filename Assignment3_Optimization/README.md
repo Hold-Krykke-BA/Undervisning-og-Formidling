@@ -15,6 +15,11 @@ See [assignment-03.pdf](assignment-03.pdf).
 
 ### Task 1.1
 
+```diff
+- todo short text about how we completed this
+```
+
+### Task 1.2
 Initial run of original program, using Sestoft Mark5 (with runningTime < 10)
 ```Java
 -------------------------------------------
@@ -30,11 +35,6 @@ Mean              Sdev               Count
 37262370,4 ns +/- 84030,46            256
 34186746,0 ns +/- 1958071,61          512
 -------------------------------------------
-```
-
-### Task 1.2
-```diff
-- todo short text about how we completed this
 ```
 
 ### Task 1.3
