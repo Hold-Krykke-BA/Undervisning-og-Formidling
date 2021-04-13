@@ -69,11 +69,12 @@ public class Program {
             }
             double mean = st / n, sdev = Math.sqrt((sst - mean * mean * n) / (n - 1));
             System.out.printf("%6.1f ns +/- %8.2f %10d%n", mean, sdev, count);
-            // runningTime < 0.25 <-- original value in below while loop 
+            // runningTime < 0.25 <-- original value in below while loop
         } while (runningTime < 8 && count < Integer.MAX_VALUE / 2);
         return dummy / totalCount;
     }
-
+    
+    // Optimized program
     private void runOptimized() throws IOException {
         //call optimized methods from here, just as in runOriginal() further above
         String fileName = "src/main/resources/FoundationSeries.txt";
