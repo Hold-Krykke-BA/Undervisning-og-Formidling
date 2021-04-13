@@ -57,9 +57,24 @@ Mean              Sdev               Count
 ```
 The use of a `BufferedReader` alone have increased the program mean runtime by 40,87%. Looking at the Profile produced by the Java Flight Recorder in IntelliJ after this change, confirms that this was an actual issue with the original code:  
 ![image](https://user-images.githubusercontent.com/35559774/114554280-d3445480-9c66-11eb-8d1c-bec0e273a117.png)  
-Going from the `InputStreamReader` (`FileReader` alone) with 41.3% in the Profile, to 11.1% for the `BufferedReader` is a noticeable change. 
+Going from the `InputStreamReader` (`FileReader` alone) with 41.3% in the Profile, to 11.1% for the `BufferedReader` is a noticeable change.  
 
-  
+After modifying the methods `tallyChars()` and `print_tally()` we have gotten an 42,2% optimazation.  
+```Java
+-------------------------------------------
+Mean              Sdev               Count
+-------------------------------------------
+24689245,0 ns +/- 7038697,77          2
+20663567,5 ns +/- 1181075,95          4
+19845390,0 ns +/- 225250,04           8
+19700353,1 ns +/- 124706,54           16
+20429985,0 ns +/- 765004,03           32
+19880365,3 ns +/- 157110,63           64
+19824745,2 ns +/- 73865,69            128
+19811067,9 ns +/- 94786,64            256
+19757997,1 ns +/- 90082,99            512
+-------------------------------------------
+```
 ### Task 1.3
 ```diff
 - todo short text about how we completed this
