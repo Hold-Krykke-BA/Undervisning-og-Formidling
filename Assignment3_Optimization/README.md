@@ -15,6 +15,11 @@ See [assignment-03.pdf](assignment-03.pdf).
 
 ### Task 1.1
 
+```diff
+- todo short text about how we completed this
+```
+
+### Task 1.2
 Initial run of original program, using Sestoft Mark5 (with runningTime < 10)
 ```Java
 -------------------------------------------
@@ -31,10 +36,21 @@ Mean              Sdev               Count
 34186746,0 ns +/- 1958071,61          512
 -------------------------------------------
 ```
-
-### Task 1.2
-```diff
-- todo short text about how we completed this
+Wrapping a `BufferedReader` around the `FileReader` and nothing else, gives the following optimazation.  
+```Java
+-------------------------------------------
+Mean              Sdev               Count
+-------------------------------------------
+26688810,0 ns +/- 8156130,62          2
+21170010,0 ns +/- 1636441,34          4
+20378076,3 ns +/- 165036,89           8
+20086596,9 ns +/- 70131,53            16
+20113604,4 ns +/- 95585,47            32
+20121626,1 ns +/- 132419,65           64
+20107895,8 ns +/- 106333,91           128
+20220584,5 ns +/- 145384,37           256
+20213537,6 ns +/- 40180,77            512
+-------------------------------------------
 ```
 
 ### Task 1.3
