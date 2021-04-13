@@ -38,7 +38,8 @@ Mean              Sdev               Count
 37262370,4 ns +/- 84030,46            256
 34186746,0 ns +/- 1958071,61          512
 -------------------------------------------
-```
+```  
+_______
 Wrapping a `BufferedReader` around the `FileReader` and nothing else, gives the following optimazation. See [this](https://stackoverflow.com/a/26871923) stackoverflow thread for more info regarding FileReader and BufferedReader.   
 ```Java
 -------------------------------------------
@@ -58,26 +59,46 @@ Mean              Sdev               Count
 The use of a `BufferedReader` alone have increased the program mean runtime by **40,87%**. Looking at the Profile produced by the Java Flight Recorder in IntelliJ after this change, confirms that this was an actual issue with the original code:  
 ![image](https://user-images.githubusercontent.com/35559774/114554280-d3445480-9c66-11eb-8d1c-bec0e273a117.png)  
 Going from the `InputStreamReader` (`FileReader` alone) with 41.3% in the Profile, to 11.1% for the `BufferedReader` is a noticeable change.  
-
+_______
+  
+After modifying the methods `tallyChars()` and `print_tally()` we have gotten an **42,37%** optimazation. 
 ```Java
 -------------------------------------------
 Mean              Sdev               Count
 -------------------------------------------
-24689245,0 ns +/- 7038697,77          2
-20663567,5 ns +/- 1181075,95          4
-19845390,0 ns +/- 225250,04           8
-19700353,1 ns +/- 124706,54           16
-20429985,0 ns +/- 765004,03           32
-19880365,3 ns +/- 157110,63           64
-19824745,2 ns +/- 73865,69            128
-19811067,9 ns +/- 94786,64            256
-19757997,1 ns +/- 90082,99            512
+24734475,0 ns +/- 6057492,36          2
+20550197,5 ns +/- 1135309,37          4
+19897790,0 ns +/- 169372,90           8
+19688542,5 ns +/- 71463,82            16
+20048747,5 ns +/- 322151,07           32
+19751591,6 ns +/- 133747,31           64
+19704611,6 ns +/- 73574,46            128
+19760670,4 ns +/- 108017,90           256
+19701593,6 ns +/- 47694,74            512
 -------------------------------------------
 ```  
-After modifying the methods `tallyChars()` and `print_tally()` we have gotten an **42,2%** optimazation.  
-![image](https://user-images.githubusercontent.com/35559774/114597817-7dd16d00-9c91-11eb-881b-50c99b65f90d.png)
-
-
+   
+![image](https://user-images.githubusercontent.com/35559774/114597817-7dd16d00-9c91-11eb-881b-50c99b65f90d.png)  
+  
+_______
+  
+After changing from `BufferedReader` to this lambda expression `Files.lines(Paths.get(fileName)).forEach(line -> tallyChars_optimized(line, freq))` from `java.nio.file.Files` the runtime decreased further. But as of now we are unsure why this is the case, as most people deem `java.nio` and `java.io` equal. We have also tried to increase the buffer in the `BufferedReader` to be able to contain the whole file, but that did nothing for the runtime. As of this change the runtime is now **51,06%** faster than the initial runtime of the program. 
+```Java
+-------------------------------------------
+Mean              Sdev               Count
+-------------------------------------------
+22515290,0 ns +/- 7673839,43          2
+17604875,0 ns +/- 1064155,01          4
+16822411,3 ns +/- 209192,50           8
+16691758,8 ns +/- 115971,66           16
+16571550,6 ns +/- 102956,38           32
+16596552,0 ns +/- 92303,35            64
+16584048,4 ns +/- 49308,56            128
+16599184,4 ns +/- 45268,89            256
+16731495,5 ns +/- 57025,00            512
+-------------------------------------------
+```  
+![image](https://user-images.githubusercontent.com/35559774/114608585-208fe880-9c9e-11eb-9533-45159b6b6bed.png)  
 ### Task 1.3
 ```diff
 - todo short text about how we completed this
