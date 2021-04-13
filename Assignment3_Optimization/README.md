@@ -15,9 +15,12 @@ See [assignment-03.pdf](assignment-03.pdf).
 
 ### Task 1.1
 
-```diff
-- todo short text about how we completed this
-```
+Profiling with the Java Flight Recorder in IntelliJ gives us the following indication of the programs shortcommings:
+![image](https://user-images.githubusercontent.com/35559774/114553882-66c95580-9c66-11eb-818f-96100b62d707.png)  
+
+Two areas that we should be able to look at are:  
+- The InputStreamReader
+- The HashMap
 
 ### Task 1.2
 Initial run of original program, using Sestoft Mark5 (with runningTime < 10)
