@@ -36,7 +36,7 @@ Mean              Sdev               Count
 34186746,0 ns +/- 1958071,61          512
 -------------------------------------------
 ```
-Wrapping a `BufferedReader` around the `FileReader` and nothing else, gives the following optimazation.  
+Wrapping a `BufferedReader` around the `FileReader` and nothing else, gives the following optimazation. See [this](https://stackoverflow.com/a/26871923) stackoverflow thread for more info regarding FileReader and BufferedReader.   
 ```Java
 -------------------------------------------
 Mean              Sdev               Count
