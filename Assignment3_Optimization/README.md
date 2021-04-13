@@ -74,7 +74,10 @@ Mean              Sdev               Count
 19811067,9 ns +/- 94786,64            256
 19757997,1 ns +/- 90082,99            512
 -------------------------------------------
-```
+```  
+![image](https://user-images.githubusercontent.com/35559774/114597817-7dd16d00-9c91-11eb-881b-50c99b65f90d.png)
+
+
 ### Task 1.3
 ```diff
 - todo short text about how we completed this
