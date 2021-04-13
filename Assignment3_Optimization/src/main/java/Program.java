@@ -86,9 +86,9 @@ public class Program {
 
 
     public static void main(String[] args) throws IOException {
-        Program programOriginal = new Program();
+        Program program = new Program();
         // false runs the original program i.e. runOriginal()
         // true runs the optimized program i.e. runOptimized()
-        programOriginal.Mark5(true);
+        program.Mark5(true);
     }
 }
