@@ -61,20 +61,20 @@ The use of a `BufferedReader` alone have increased the program mean runtime by *
 Going from the `InputStreamReader` (`FileReader` alone) with 41.3% in the Profile, to 11.1% for the `BufferedReader` is a noticeable change.  
 _______
   
-After modifying the methods `tallyChars()` and `print_tally()` we have gotten an **42,2%** optimazation. 
+After modifying the methods `tallyChars()` and `print_tally()` we have gotten an **42,37%** optimazation. 
 ```Java
 -------------------------------------------
 Mean              Sdev               Count
 -------------------------------------------
-24689245,0 ns +/- 7038697,77          2
-20663567,5 ns +/- 1181075,95          4
-19845390,0 ns +/- 225250,04           8
-19700353,1 ns +/- 124706,54           16
-20429985,0 ns +/- 765004,03           32
-19880365,3 ns +/- 157110,63           64
-19824745,2 ns +/- 73865,69            128
-19811067,9 ns +/- 94786,64            256
-19757997,1 ns +/- 90082,99            512
+24734475,0 ns +/- 6057492,36          2
+20550197,5 ns +/- 1135309,37          4
+19897790,0 ns +/- 169372,90           8
+19688542,5 ns +/- 71463,82            16
+20048747,5 ns +/- 322151,07           32
+19751591,6 ns +/- 133747,31           64
+19704611,6 ns +/- 73574,46            128
+19760670,4 ns +/- 108017,90           256
+19701593,6 ns +/- 47694,74            512
 -------------------------------------------
 ```  
    
