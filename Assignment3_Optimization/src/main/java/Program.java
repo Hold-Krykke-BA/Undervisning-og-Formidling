@@ -45,9 +45,9 @@ public class Program {
                 .collect(
                         toMap(Map.Entry::getKey, Map.Entry::getValue, (e1, e2) -> e2,
                                 LinkedHashMap::new));
-        for (Character c : sorted.keySet()) {
-            //System.out.println("" + c + ": " + sorted.get(c));;
-        }
+//        for (Character c : sorted.keySet()) {
+//            System.out.println("" + c + ": " + sorted.get(c));;
+//        }
     }
 
     public double Mark5(boolean isOptimized) throws IOException {
@@ -87,6 +87,8 @@ public class Program {
 
     public static void main(String[] args) throws IOException {
         Program programOriginal = new Program();
+        // false runs the original program i.e. runOriginal()
+        // true runs the optimized program i.e. runOptimized()
         programOriginal.Mark5(true);
     }
 }
