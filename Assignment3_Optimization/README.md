@@ -78,9 +78,28 @@ Mean              Sdev               Count
 -------------------------------------------
 ```  
    
-![image](https://user-images.githubusercontent.com/35559774/114597817-7dd16d00-9c91-11eb-881b-50c99b65f90d.png)
+![image](https://user-images.githubusercontent.com/35559774/114597817-7dd16d00-9c91-11eb-881b-50c99b65f90d.png)  
+  
+_______
+  
+After changing from `BufferedReader` to this lambda expression `Files.lines(Paths.get(fileName)).forEach(line -> tallyChars_optimized(line, freq))` from `java.nio.file.Files` the runtime decreased further. But as of now we are unsure why this is the case, as most people deem `java.nio` and `java.io` equal. We have also tried to increase the buffer in the `BufferedReader` to be able to contain the whole file, but that did nothing for the runtime. As of this change the runtime is now **51,06%** faster than the initial runtime of the program. 
+```Java
+-------------------------------------------
+Mean              Sdev               Count
+-------------------------------------------
+22515290,0 ns +/- 7673839,43          2
+17604875,0 ns +/- 1064155,01          4
+16822411,3 ns +/- 209192,50           8
+16691758,8 ns +/- 115971,66           16
+16571550,6 ns +/- 102956,38           32
+16596552,0 ns +/- 92303,35            64
+16584048,4 ns +/- 49308,56            128
+16599184,4 ns +/- 45268,89            256
+16731495,5 ns +/- 57025,00            512
+-------------------------------------------  
+![image](https://user-images.githubusercontent.com/35559774/114608585-208fe880-9c9e-11eb-9533-45159b6b6bed.png)  
 
-
+```  
 ### Task 1.3
 ```diff
 - todo short text about how we completed this
