@@ -52,7 +52,8 @@ Mean              Sdev               Count
 20213537,6 ns +/- 40180,77            512
 -------------------------------------------
 ```
-
+The use of a `BufferedReader` alone have increased the program mean runtime by 40,87%.   
+  
 ### Task 1.3
 ```diff
 - todo short text about how we completed this
