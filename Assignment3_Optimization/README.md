@@ -55,7 +55,10 @@ Mean              Sdev               Count
 20213537,6 ns +/- 40180,77            512
 -------------------------------------------
 ```
-The use of a `BufferedReader` alone have increased the program mean runtime by 40,87%.   
+The use of a `BufferedReader` alone have increased the program mean runtime by 40,87%. Looking at the Java Flight Recorder in IntelliJ after this change, confirms that this was an actual issue with the original code:  
+![image](https://user-images.githubusercontent.com/35559774/114554280-d3445480-9c66-11eb-8d1c-bec0e273a117.png)  
+Going from the InputStreamReader (FileReader alone) with 41.3% in the Profiler, to 11.1% for the BufferedReader is a noticeable change. 
+
   
 ### Task 1.3
 ```diff
