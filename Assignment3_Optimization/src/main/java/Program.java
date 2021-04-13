@@ -16,7 +16,7 @@ import static java.util.stream.Collectors.toMap;
  */
 public class Program {
     // Original program
-    public void run() throws FileNotFoundException, IOException {
+    public void runOriginal() throws FileNotFoundException, IOException {
         String fileName = "src/main/resources/FoundationSeries.txt";
         Reader reader = new FileReader(fileName);
         Map<Integer, Long> freq = new HashMap<>();
@@ -53,7 +53,7 @@ public class Program {
         }
     }
 
-    public double Mark5() throws IOException {
+    public double Mark5(boolean isOptimized) throws IOException {
         int n = 10, count = 1, totalCount = 0;
         double dummy = 0.0, runningTime = 0.0, st = 0.0, sst = 0.0;
         do {
@@ -62,7 +62,8 @@ public class Program {
             for (int j = 0; j < n; j++) {
                 Timer t = new Timer();
                 for (int i = 0; i < count; i++)
-                    run();
+                    if(isOptimized) runOptimized();
+                    else runOriginal();
                     runningTime = t.check();
                 double time = runningTime * 1e9 / count;
                 st += time;
@@ -76,8 +77,13 @@ public class Program {
         return dummy / totalCount;
     }
 
+    private void runOptimized() {
+        //call optimized methods from here, just as in runOriginal() further above
+    }
+
+
     public static void main(String[] args) throws IOException {
         Program programOriginal = new Program();
-        programOriginal.Mark5();
+        programOriginal.Mark5(false);
     }
 }
