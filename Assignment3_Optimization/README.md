@@ -17,6 +17,7 @@ See [assignment-03.pdf](assignment-03.pdf).
 
 Initial run of original program, using Sestoft Mark5 (with runningTime < 10)
 ```Java
+-------------------------------------------
 Mean              Sdev               Count
 -------------------------------------------
 45161160,0 ns +/- 9633302,98          2
@@ -28,6 +29,7 @@ Mean              Sdev               Count
 37195579,7 ns +/- 120079,00           128
 37262370,4 ns +/- 84030,46            256
 34186746,0 ns +/- 1958071,61          512
+-------------------------------------------
 ```
 
 ### Task 1.2
