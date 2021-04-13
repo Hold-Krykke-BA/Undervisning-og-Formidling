@@ -1,10 +1,7 @@
 import utils.Timer;
 
 import java.io.*;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.Map;
+import java.util.*;
 
 import static java.util.stream.Collectors.toMap;
 
@@ -28,8 +25,28 @@ public class Program {
                 freq.put(b, freq.get(b) + 1);
             } catch (NullPointerException np) {
                 freq.put(b, 1L);
-            };
+            }
         }
+    }
+
+    private void tallyChars_optimized(Reader reader, Map<Integer, Long> freq) throws IOException {
+        int b;
+        while ((b = reader.read()) != -1) {
+            freq.put(b, freq.getOrDefault(b, 0L) + 1);
+        }
+    }
+
+    private void print_tally_optimized(Map<Integer, Long> freq) {
+        int dist = 'a' - 'A';
+
+        List<Map.Entry<Character, Long>> list = new ArrayList<>();
+        for (Character c = 'A'; c <= 'Z'; c++) {
+            list.add(new AbstractMap.SimpleEntry<>(c, freq.getOrDefault(c, 0L) + freq.getOrDefault(c + dist, 0L)));
+        }
+        list.sort((e1, e2) -> e2.getValue().compareTo(e1.getValue()));
+//        for (Map.Entry entry : list) {
+//            System.out.println("" + entry.getKey() + ": " + entry.getValue());;
+//        }
     }
 
     private void print_tally(Map<Integer, Long> freq) {
@@ -80,8 +97,8 @@ public class Program {
         String fileName = "src/main/resources/FoundationSeries.txt";
         Reader reader = new BufferedReader(new FileReader(fileName));
         Map<Integer, Long> freq = new HashMap<>();
-        tallyChars(reader, freq);
-        print_tally(freq);
+        tallyChars_optimized(reader, freq);
+        print_tally_optimized(freq);
     }
 
 
@@ -90,5 +107,6 @@ public class Program {
         // false runs the original program i.e. runOriginal()
         // true runs the optimized program i.e. runOptimized()
         program.Mark5(true);
+        //program.runOptimized();
     }
 }
