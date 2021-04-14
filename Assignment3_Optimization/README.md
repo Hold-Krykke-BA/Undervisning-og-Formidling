@@ -1,6 +1,4 @@
 # Letter frequencies (Optimization assignment)
-Original repo description:  
-> Simple program used to illustrate performance problems. You should be able to optimize this program to run about twice as fast.
 
 ## Assignment description
 See [assignment-03.pdf](assignment-03.pdf).
