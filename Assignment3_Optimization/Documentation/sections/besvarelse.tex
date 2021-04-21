@@ -45,7 +45,7 @@ Below you can find a sample of the output of the program:
     \caption{The 5 most and least frequent letters in the dataset}
 \end{table}
 
-\vspace{0.5cm}
+\newpage
 \subsection{Current Performance}
 \label{sec:2.2}
 We measured the program using the Mark5 method supplied by Sestoft.\cite{sestoft} \newline
@@ -74,7 +74,6 @@ numberstyle = \small,
     -------------------------------------------
 \end{lstlisting}
 
-\newpage
 \subsection{Bottleneck(s)}
 \label{sec:2.3}
 Profiling with the Java Flight Recorder in IntelliJ gives us the following indication of the programs shortcommings:
@@ -135,6 +134,7 @@ The use of a BufferedReader alone have increased the program mean runtime by \te
     \label{fig:p2}
 \end{figure}
 
+\newpage
 \subsubsection{HashMap refactoring}
 \label{sec:2.6.2}
 After modifying \emph{HashMap} and the methods \emph{tallyChars()} and \emph{print\_tally()} we are now at an \textbf{40.4\%} overall optimization.
@@ -188,6 +188,7 @@ Files.lines(Paths.get(fileName)).forEach(line -> tallyChars_optimized(line, freq
 \end{figure}
 
 \subsection{Comparison}
+\label{sec:2.7}
 This section goes into detail of the speed improvements.
 
 \begin{figure}[H]
@@ -197,9 +198,17 @@ This section goes into detail of the speed improvements.
     \label{fig:boxplots}
 \end{figure}
 
-We ran the original and the optimized 300 programs to better understand the performance increase.\\
-The results are visualized here in a box and whiskers plot.
+We ran both versions of the program 300 times to better understand the performance increase. 
+The results are visualized above in a box-and-whiskers plot. As you can see, the original program lies at above 50ms per run while the optimized program lies at just above 20ms.
+
+\newpage
+\subsection{Conclusion}
+\label{sec:2.8}
+During the project we tried to identify the bottlenecks causing the slow run time first by reviewing the code and then looking at the profiles from the Java Flight Recorder. We found that the main problems was with the file reading, which also had the greatest impact on performance. We achieved an optimization of the  program with a run time \textbf{66\%} faster than the initial run time of the program. 
+
 
 \newpage
 \vspace{0.5cm}
+
+
 
