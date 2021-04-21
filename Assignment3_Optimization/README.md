@@ -10,4 +10,4 @@ See [assignment-03.pdf](assignment-03.pdf).
 
 ## Solution
 
-See our [LateX report](https://github.com/Hold-Krykke-BA/Undervisning-og-Formidling/blob/main/Assignment3_Optimization/Documentation/Assignment%203_LateX_Report.pdf) for the solution.
+See our [LateX report](https://github.com/Hold-Krykke-BA/Undervisning-og-Formidling/blob/main/Assignment3_Optimization/Documentation/Assignment%203_LateX_Rapport.pdf) for the solution.
