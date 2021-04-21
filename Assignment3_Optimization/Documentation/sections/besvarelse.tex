@@ -3,10 +3,10 @@ All test have been run on the same machine with the following specifications:
 
 
 \begin{itemize}
-    \item \textbf{CPU} - AMD Ryzen 7 3700X 8-Core 3.60 GHz
-    \item \textbf{RAM} - DC 16 GB DDR4 3200 MHz 
+    \item \textbf{CPU} - Intel Core i7-4770k 4-Core (8 threads) 3.50 GHz
+    \item \textbf{RAM} - Corsair 16 GB DDR3 1600 MHz 
     \item \textbf{OS} - Windows 10 Pro 64-bit
-    \item \textbf{JVM} - Oracle Corporation 15.0.2
+    \item \textbf{JVM} - Oracle Corporation 16.0
 \end{itemize}
 \vspace{0.5cm}
 \subsection{Original Program Introduction}
@@ -19,12 +19,38 @@ The Original Program to be optimized supplied by the school (the link in the ass
 \emph{Simple program used to illustrate performance problems. You should be able to optimize this program to run about twice as fast. \cite{cph}.} 
 \end{displayquote}
 
-The program reads a text file and tally up all the characters in the file and prints them out in the console with the most frequent printed first accompanied by the number of occurrences of each character. 
+The program source consists of the foundation trilogy by Isaac Asimov (roughly 25.000 lines of text) and a single Java file.
+The file reads the text and returns the frequencies of the letters within the text.
+
+The Java program is purposefully written in an inefficient way. It has two helper methods and at its core it presents a list of the letter frequencies between a-zA-Z. 
+
+Below you can find a sample of the output of the program:
+
+\begin{table}[h]
+    \centering
+    \begin{tabular}{cc}
+    Letter & Frequencies \\
+    E      & 118313      \\
+    T      & 87190       \\
+    A      & 76011       \\
+    O      & 74907       \\
+    N      & 67908       \\
+    ...    & ...         \\
+    K      & 6630        \\
+    X      & 1457        \\
+    Q      & 1017        \\
+    J      & 806         \\
+    Z      & 674        
+    \end{tabular}
+    \caption{The 5 most and least frequent letters in the dataset}
+\end{table}
 
 \vspace{0.5cm}
 \subsection{Current Performance}
 \label{sec:2.2}
-This is the current console readings when the program is run without any changes to the code. So a baseline run time of 34186746,0 nanoseconds with a standard deviation of 1958071,61 nanoseconds. 
+We measured the program using the Mark5 method supplied by Sestoft.\cite{sestoft} \newline
+This is the current console readings when the program is run without any changes to the code. 
+So a baseline run time of 51 miliseconds with a standard deviation of 1.07 miliseconds. 
 \lstset{
 tabsize = 4, 
 showstringspaces = false, 
@@ -38,15 +64,13 @@ numberstyle = \small,
     -------------------------------------------
     Mean              Sdev               Count
     -------------------------------------------
-    45161160,0 ns +/- 9633302,98          2
-    37220422,5 ns +/- 349034,17           4
-    37097426,3 ns +/- 237128,88           8
-    37167326,9 ns +/- 257313,56           16
-    37140620,9 ns +/- 194416,43           32
-    37137303,8 ns +/- 167730,54           64
-    37195579,7 ns +/- 120079,00           128
-    37262370,4 ns +/- 84030,46            256
-    34186746,0 ns +/- 1958071,61          512
+    60,2 ms +/-    20,39 ms          2
+    54,7 ms +/-     4,41 ms          4
+    51,4 ms +/-     1,62 ms          8
+    51,1 ms +/-     1,90 ms         16
+    50,7 ms +/-     0,28 ms         32
+    50,7 ms +/-     0,64 ms         64
+    51,0 ms +/-     1,07 ms        128
     -------------------------------------------
 \end{lstlisting}
 
@@ -167,6 +191,16 @@ Files.lines(Paths.get(fileName)).forEach(line -> tallyChars_optimized(line, freq
     \includegraphics[width = 0.8\textwidth ]{figures/profile4.PNG}
     \caption{Java Fligt Recorder Profile 4}
     \label{fig:p4}
+\end{figure}
+
+\subsection{Comparison}
+This section goes into detail of the speed improvements.
+
+\begin{figure}[H]
+    \centering\
+    \includegraphics[width = 0.95\textwidth ]{figures/boxplots.png}
+    \caption{Boxplot of performance between original and optimized solution}
+    \label{fig:boxplots}
 \end{figure}
 
 
