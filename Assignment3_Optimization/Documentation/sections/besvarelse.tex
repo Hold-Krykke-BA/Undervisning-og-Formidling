@@ -64,13 +64,13 @@ numberstyle = \small,
     -------------------------------------------
     Mean              Sdev               Count
     -------------------------------------------
-    60,2 ms +/-    20,39 ms          2
-    54,7 ms +/-     4,41 ms          4
-    51,4 ms +/-     1,62 ms          8
-    51,1 ms +/-     1,90 ms         16
-    50,7 ms +/-     0,28 ms         32
-    50,7 ms +/-     0,64 ms         64
-    51,0 ms +/-     1,07 ms        128
+    60,2 ms +/-    20,39 ms                2
+    54,7 ms +/-     4,41 ms                4
+    51,4 ms +/-     1,62 ms                8
+    51,1 ms +/-     1,90 ms                16
+    50,7 ms +/-     0,28 ms                32
+    50,7 ms +/-     0,64 ms                64
+    51,0 ms +/-     1,07 ms                128
     -------------------------------------------
 \end{lstlisting}
 
@@ -113,20 +113,18 @@ We have done the following, all of which can be seen in the code (except the \em
 In this section the documentation for each improvement can be seen, along with our thoughts about the changes. 
 \subsubsection{BufferedReader}
 \label{sec:2.6.1}
-The use of a BufferedReader alone have increased the program mean runtime by \textbf{40,87\%}. Looking at the Profile produced by the Java Flight Recorder in IntelliJ after this change, confirms that this was an actual issue with the original code.
+The use of a BufferedReader alone have increased the program mean runtime by \textbf{32.2\%}. Looking at the Profile produced by the Java Flight Recorder in IntelliJ after this change, confirms that this was an actual issue with the original code.
 \begin{lstlisting}[language = Java , firstnumber = last , escapeinside={(*@}{@*)}]
     -------------------------------------------
     Mean              Sdev               Count
     -------------------------------------------
-    26688810,0 ns +/- 8156130,62          2
-    21170010,0 ns +/- 1636441,34          4
-    20378076,3 ns +/- 165036,89           8
-    20086596,9 ns +/- 70131,53            16
-    20113604,4 ns +/- 95585,47            32
-    20121626,1 ns +/- 132419,65           64
-    20107895,8 ns +/- 106333,91           128
-    20220584,5 ns +/- 145384,37           256
-    20213537,6 ns +/- 40180,77            512
+    39,8 ms +/-    14,74 ms                2
+    34,1 ms +/-     1,53 ms                4
+    33,7 ms +/-     1,45 ms                8
+    33,5 ms +/-     0,85 ms                16
+    32,7 ms +/-     0,29 ms                32
+    33,1 ms +/-     1,00 ms                64
+    33,9 ms +/-     1,39 ms                128
     -------------------------------------------
 \end{lstlisting}
 
@@ -139,20 +137,18 @@ The use of a BufferedReader alone have increased the program mean runtime by \te
 
 \subsubsection{HashMap refactoring}
 \label{sec:2.6.2}
-After modifying \emph{HashMap} and the methods \emph{tallyChars()} and \emph{print\_tally()} we are now at an \textbf{42,37\%} overall optimization.
+After modifying \emph{HashMap} and the methods \emph{tallyChars()} and \emph{print\_tally()} we are now at an \textbf{40.4\%} overall optimization.
 \begin{lstlisting}[language = Java , firstnumber = last , escapeinside={(*@}{@*)}]
     -------------------------------------------
     Mean              Sdev               Count
     -------------------------------------------
-    24734475,0 ns +/- 6057492,36          2
-    20550197,5 ns +/- 1135309,37          4
-    19897790,0 ns +/- 169372,90           8
-    19688542,5 ns +/- 71463,82            16
-    20048747,5 ns +/- 322151,07           32
-    19751591,6 ns +/- 133747,31           64
-    19704611,6 ns +/- 73574,46            128
-    19760670,4 ns +/- 108017,90           256
-    19701593,6 ns +/- 47694,74            512
+    36,3 ms +/-    12,22 ms                 2
+    30,2 ms +/-     1,49 ms                 4
+    30,9 ms +/-     0,86 ms                 8
+    31,2 ms +/-     2,04 ms                 16
+    30,0 ms +/-     1,26 ms                 32
+    31,0 ms +/-     0,78 ms                 64
+    29,8 ms +/-     0,62 ms                 128
     -------------------------------------------
 \end{lstlisting}
 
@@ -168,21 +164,19 @@ After modifying \emph{HashMap} and the methods \emph{tallyChars()} and \emph{pri
 
 After changing from \emph{BufferedReader} to this lambda expression from \emph{java.nio.file.Files} \begin{lstlisting}[language = Java , firstnumber = last , escapeinside={(*@}{@*)}]
 Files.lines(Paths.get(fileName)).forEach(line -> tallyChars_optimized(line, freq))
-\end{lstlisting} the run time decreased further. But as of now we are unsure why this is the case, as most people deem \emph{java.nio} and \emph{java.nio} equal. We have also tried to increase the buffer in the \emph{BufferedReader} to be able to contain the whole file, but that did nothing for the run time. As of this change the run time is now \textbf{51,06\%} faster than the initial run time of the program.
+\end{lstlisting} the run time decreased further. But as of now we are unsure why this is the case, as most people deem \emph{java.nio} and \emph{java.nio} equal. We have also tried to increase the buffer in the \emph{BufferedReader} to be able to contain the whole file, but that did nothing for the run time. As of this change the run time is now \textbf{66\%} faster than the initial run time of the program.
 
 \begin{lstlisting}[language = Java , firstnumber = last , escapeinside={(*@}{@*)}]
     -------------------------------------------
     Mean              Sdev               Count
     -------------------------------------------
-    22515290,0 ns +/- 7673839,43          2
-    17604875,0 ns +/- 1064155,01          4
-    16822411,3 ns +/- 209192,50           8
-    16691758,8 ns +/- 115971,66           16
-    16571550,6 ns +/- 102956,38           32
-    16596552,0 ns +/- 92303,35            64
-    16584048,4 ns +/- 49308,56            128
-    16599184,4 ns +/- 45268,89            256
-    16731495,5 ns +/- 57025,00            512
+    22,7 ms +/-    10,48 ms                2
+    18,0 ms +/-     1,76 ms                4
+    17,6 ms +/-     1,23 ms                8
+    17,1 ms +/-     0,44 ms                16
+    17,3 ms +/-     0,61 ms                32
+    16,8 ms +/-     0,16 ms                64
+    17,0 ms +/-     0,34 ms                128
     -------------------------------------------
 \end{lstlisting}
 
@@ -203,7 +197,8 @@ This section goes into detail of the speed improvements.
     \label{fig:boxplots}
 \end{figure}
 
-
+We ran the original and the optimized 300 programs to better understand the performance increase.\\
+The results are visualized here in a box and whiskers plot.
 
 \newpage
 \vspace{0.5cm}
