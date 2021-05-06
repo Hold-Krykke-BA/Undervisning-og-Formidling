@@ -1,0 +1,73 @@
+
+The inspiration for this paper comes from an assignment in the course Mathematics and Algorithms, where we examined five different sorting algorithms with varying big O time complexity, by sorting the complete works of William Shakespeare. \cite{mal3}
+
+\vspace{0.5cm}
+\subsection{Problem description}
+\label{sec:1.1}
+We are interested in investigating how the run-time of the five sorting algorithms changes on different hardware and whether the difference reflects the time complexity. \\In addition to this, we are interested in delving further into the use cases for the different sorting algorithms and examine whether arguments can be made for the use of the algorithms with a higher time complexity.
+
+\subsubsection*{Problem scope}
+\label{sec:1.1.1}
+{\rule{\linewidth}{0.5mm}}
+\emph{What impact does time complexity vs. hardware have on the run-time for five chosen sorting algorithms and in what scenarios would it be beneficial to use a sorting algorithm with a greater time complexity?}\\
+{\rule{\linewidth}{0.5mm}}
+
+\vspace{0.5cm}
+\subsection{Sorting Algorithms}
+\label{sec:1.2}
+The five different sorting algorithms we will consider in this paper are the same as in the above-mentioned assignment.
+We will in this section briefly go over the five sorting algorithms to give a basic overview of their structure and time complexity. 
+
+\subsubsection*{Tries - linear time complexity}
+\label{sec:1.2.1}
+A trie is a  tree data structure used for lexicographic sorting by locating specific keys (strings) in the search tree. The trie contains nodes with references to child nodes or null and each node have only one parent node. Each node will have references to \emph{n} child nodes, where \emph{n} is the size of the alphabet for that specific trie. \cite{algo} \emph{page 732-745}
+\\
+To access a key, the trie is traversed depth-first following the references to other child nodes. For searching and inserting, the time complexity for a trie is dependant on characters stored in the trie and the length of the key which gives \(O(n * k)\) where \emph{n} is the size of the alphabet and \emph{k} is the length of the key.  \cite{tries} 
+
+\subsubsection*{Merge sort - linearithmic time complexity}
+\label{sec:1.2.2}
+
+Merge sort is a recursive sorting algorithm that divides an array into two halves, sorts the two halves and then merges the results. One of Merge sort’s most attractive properties is
+that it guarantees to sort any array of \emph{n} items in time proportional to \emph{O(n log(n))}. Its prime disadvantage is that it uses extra memory proportional to \emph{n} due to the auxiliary arrays. \cite{algo} \emph{page 270-282}\\
+Merge sort has a number of implementations and optimizations, where we chose to use the \emph{Top-down} variation, which follows the \emph{divide-and-conquer} paradigm of dividing a large problem into smaller subproblems, solving them and ultimately merging them to solve the problem.
+
+
+\subsubsection*{Heap sort - linearithmic time complexity}
+\label{sec:1.2.3}
+A heap is a tree-based data structure where all nodes have a value or weight that is less or equal to all it's child nodes (if it is a min-heap, the opposite is true for a max heap). To satisfy this in a complete binary tree, any child node that have no siblings is assigned to the left, only the bottom rightmost node can have one child node and leaves can only be on the deepest level of the tree. \cite{umd12}\\
+Heap sort takes advantage of the fact that the root always is the smallest (or greatest), removes the root and swap the rightmost leaf to the root. All children will be smaller than the new root, so the nodes swap places until the heap again satisfy the properties described above. \cite{umd13} 
+Construction of a heap have a time complexity of \(O(n)\) and the extraction of the root have a  time complexity of \emph{O(n log(n))}. The majority of the run-time is spent in the extraction of the root-phase. \cite{umd14}
+
+
+\subsubsection*{Insertion sort - quadratic time complexity}
+\label{sec:1.2.4}
+Insertion sort is a sorting algorithm that is useful for sorting ordered or almost sorted arrays. Taken from the book \emph{Algorithms, 4th Edition}:
+\begin{displayquote}
+\emph{The algorithm that people often use to sort bridge hands is to consider the cards one at a time, inserting each into its proper place among those already considered (keeping them sorted).} \cite{algo} \emph{page 250}
+\end{displayquote}
+\nobreak
+
+The algorithm iterates through the array starting at index 1, it then compare the value of the current index to the elements to the left of it. If it finds an element that have a smaller value than itself, it moves all elements it compared itself to one position to the right, while moving itself to the position after the smaller element. 
+The time complexity will for the most part be \(O(n^2)\), however if its sorting an already sorted array the time complexity will instead be \(O(n)\). \cite{algo} \emph{page 250-252} \cite{g4g}
+
+\subsubsection*{Selection sort - quadratic time complexity}
+\label{sec:1.2.5}
+The Selection sort algorithm is one of the most basic sorting algorithm. For each index in the array, starting at index 0, the algorithm finds the smallest value of the array and swaps it with the current index. The starting index is then incremented by one and the process is repeated until the array has been fully sorted.
+The time complexity will always be \(O(n^2)\) as the algorithm use two nested loops. \cite{algo} \emph{page 248-249} \cite{g4g}
+
+\subsubsection*{Time Complexity Impact on Choice of Algorithms}
+\label{sec:1.2.6}
+When deciding which sorting algorithm is the best fit for a given use case, the time complexity needs to be considered. Algorithms with a time complexity of \(O(n^2)\) becomes quadratic slower based on the amount of data in the array its sorting. While algorithms with \emph{O(n log(n))} have a linearithmic growth. One of the best time complexity you can get on a sorting algorithm which can be used on any type of data is \emph{O(n log(n))}. To use an algorithm with a better time complexity, some sort of constraints will need to be applied on the data. An example is Tries which can only be used on a data set of strings. \cite{algo} \emph{page 186-205}
+\newline
+\newline
+When choosing between two or more algorithms with the same time complexity, it is necessary to look at how the different algorithms work. An example is Heap sort and Merge sort which both have a time complexity of \emph{O(n log(n))}.
+\newline
+Heap sort is a bit slower than Merge sort, as it requires preprocessing when it builds the heap, before  actually sorting. Merge sort doesn't require any preprocessing, but it use additional memory due to the auxiliary arrays. Aside from time efficiency and memory, the stability of an algorithm also should be considered. In a stable algorithm, elements with identical keys keep their order after being sorted. An example could be if two people with the same age was to be sorted based on their age, a stable sorting algorithm would maintain the order of the ages while a non-stable algorithm would not be able to guarantee the same order. Merge sort is a stable algorithm and Heap sort is a non-stable algorithm \cite{sortingAlgo}.
+So between these two algorithms the consideration should be on whether the run-time or the memory use is more important, while also considering if the order of identical keys is needed. 
+\newline
+Regarding the algorithms with a greater time complexity, such as Selection sort and Insertion sort which both have the time complexity of \(O(n^2)\) we will look at the data in the following tests an determine if an argument for their use can be made. 
+
+
+
+
+

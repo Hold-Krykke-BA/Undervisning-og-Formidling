@@ -1,0 +1,134 @@
+\documentclass[10pt,oneside,a4paper, english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin2, utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{color}
+\usepackage[margin=3cm]{geometry}
+\usepackage{titlesec}
+\usepackage{changepage}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{float}
+\usepackage{lscape}
+\usepackage[english]{nomencl}
+\usepackage{csquotes}
+\usepackage{hyperref}
+\setlength{\belowcaptionskip}{10pt plus 3pt minus 2pt} % spacing above figure captions. +/- is "stretch"
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{url}
+
+\thispagestyle{empty}
+\pagestyle{fancy}
+% \pagestyle{fancy}
+\fancyhf{}
+
+\setlength{\parindent}{2em}
+\title{Investigating Time Complexity of Sorting Algorithms} 
+\makeatletter\let\Title\@title%\makeatother
+% \rhead{Investigating Time Complexity of five Sorting Algorithms}
+% \lhead{}
+
+
+\newlist{steps}{enumerate}{1}
+\setlist[steps, 1]{leftmargin=1.5cm,label = Step \arabic*:}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\rhead{\nouppercase{\rightmark}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\renewcommand{\subsectionmark}[1]{}
+\lhead{\Title}
+\setlength\headheight{16pt}
+\setlength{\footskip}{50pt}
+\cfoot{\thepage}
+
+%%%%%
+\begin{document}
+% \pagenumbering{roman} 
+% \input{sections/frontpage.tex}
+% \thispagestyle{plain}
+
+\begin{center}
+\hrule
+\vspace{.5cm}
+{ \huge \bfseries Exploration and Presentation 
+\\ 
+\vspace{.5cm}
+Investigating Time Complexity of Sorting Algorithms} 
+\vspace{.5cm}
+\hrule
+\vspace{1cm}
+\centering \today\\
+\vspace{0.5cm}
+\textsc{\textbf{Authors}}\\
+\centering
+Rúni Vedel Niclasen - cph-rn118\\
+Camilla Jenny Valerius Staunstrup - cph-cs340\\
+Asger Thorsboe Lundblad - cph-al217\\
+
+\end{center}
+\section*{Abstract} \label{abstract}
+Choosing the right sorting algorithm is important to avoid poor run-time efficiency. Not understanding the effect that the time complexity of an algorithm can have on run-time performance, makes it difficult to choose the proper sorting algorithm for the given problem. Switching to a sorting algorithm with a better time complexity has more of an effect than upgrading hardware. The impact time complexity have on run-time and what factors to take into account is crucial to understand when deciding which algorithm to implement.
+
+\tableofcontents
+
+
+\newpage
+\pagestyle{fancy}
+\pagenumbering{arabic} 
+\fancyfoot[C]{Page \thepage\ of \pageref{EndOfText}}
+
+\newpage
+\section{Introduction} \label{introduction}
+\input{sections/1introduction} 
+
+\vspace{0.5cm}
+\section{Methodology} \label{methodology}
+\input{sections/2methodology} 
+
+\newpage
+\section{Results} \label{results}
+\input{sections/3results}
+
+\newpage
+\section{Analysis} \label{analysis}
+\input{sections/4analysis} 
+
+\vspace{0.5cm}
+\section{Discussion} \label{discussion}
+\input{sections/5discussion} 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \newpage
+% \section{NEW SECTION} \label{NAME}
+% \input{sections/NAME.tex} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\label{EndOfText}
+
+\newpage
+\pagenumbering{roman} 
+% \addcontentsline{toc}{section}{List of Figures}
+\fancyfoot[C]{Page \thepage\ of \pageref{endOfDoc}}
+
+% \listoffigures
+% \thispagestyle{fancy}
+
+% \newpage
+
+% \addcontentsline{toc}{section}{List of Tables}
+% \listoftables
+% \thispagestyle{fancy}
+
+\newpage
+\addcontentsline{toc}{section}{References}
+\bibliography{document.bib} 
+
+\bibliographystyle{ieeetr}
+
+\label{endOfDoc}
+\end{document}

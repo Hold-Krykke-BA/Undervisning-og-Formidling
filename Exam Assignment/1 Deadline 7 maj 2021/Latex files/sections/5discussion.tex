@@ -1,0 +1,53 @@
+
+In this section we aim to compare the findings collected in our two tests with the known time complexity of the sorting algorithms. As well as talking about different use cases for the algorithms with the worst time complexity among the ones we have tested earlier.
+
+\vspace{0.5cm}
+\subsection{Discussion of results and scope}
+\label{sec:5.1}
+
+
+In figure~\ref{fig:pic1} on page~\pageref{fig:pic1} it is quite clear to see that for all the PCs, the relative jump between the time complexities is the same. The hardware does have a small impact on the run-time, but that difference is minuscule compared to the difference between the linear and linearithmic growth and between the linearithmic and quadratic growth. Even if we compare the fastest sorting algorithm on the slowest PC (Trie sort on PC6, run-time of \emph{247ms}), with the next-fastest algorithm on the fastest PC (Merge sort on PC5, run-time of \emph{527ms}), we still see more than a doubling of the run-time from the Trie sort to the Merge sort. The jump from any of the linearithmic algorithms to the quadratic algorithms would clearly never be solved by better hardware.
+\\
+\\
+In figure~\ref{fig:pic2} on page~\pageref{fig:pic2} we can see an overall distinction between the three different time complexities and the graphs look similar to graphs shown for educational purposes. \cite{bigOgraph}. There is a clear difference in efficiency of the algorithms as the input data grows with the quickest and greatest efficiency loss for the to quadratic algorithms. The Trie sort algorithm with linear growth almost seems to loose very little efficiency as the data amount grows. 
+\\
+\\
+In figure~\ref{fig:pic3} on page~\pageref{fig:pic3} we get a more clear view of the efficiency of the five sorting algorithms compared to each other. The 0.1\% of data amounts to 930 words and around this data size all other algorithms are more efficient than the linear time Trie sort. It is interesting that even the quadratic algorithms have a greater efficiency than the Trie when the data amount is this small. This is likely due to the amount of preprocessing in the Trie.
+\\
+\\
+Based on the figures~\ref{fig:pic2} and \ref{fig:pic3} it is clear that Selection sort and Insertion sort will always have a greater efficiency loss than Merge and Heap sort - as well as Tries after the data set reaches a certain size. However both Selection and Insertion sort have some very useful properties, which can be used in a few different scenarios.
+\\
+Selection sort is a basic quadratic algorithm which is rarely used. Although it might never be used to sort a whole data set, it's possible to make use of one of its unique properties. If the algorithm is run only N times on an array of data, instead of sorting the whole array, then the first N elements will always be sorted and in their final position based on the final sorted array, while the remaining elements will remain unsorted \cite{sortingAlgo}. As an example suppose Selection sort is run 5 times on this array of integers:\\
+\\
+\([5, 2, 7, 12, 9, 11, 1, 1, 9, 34, 7, 0]\)\\
+\\
+The result would then be:\\
+\\
+\([\textbf{0, 1, 1, 2, 5}, 11, 12, 7, 9, 34, 7, 9]\)\\
+\\
+The first five entries are sorted and in their correct position, as if the whole array had been sorted.
+This property can be useful in specific use cases. A use case could for example be a search engine like Google, where an arbitrary search such as "Sorting Algorithms" return 58 million results, but only the 10 most relevant will be shown on page one. 
+In this scenario, running a Selection sort 10 times on the results, rather than sorting the whole result list with any of the other discussed algorithms, might result in a faster loading speed \cite{sortingAlgo}.
+\\
+\\
+Insertion sort is another basic quadratic algorithm, however if it's used to sort an already sorted or nearly sorted array of data, then its time complexity becomes linear \cite{algo} \emph{page 250}. Because of this it might be possible to combine Insertion sort with a faster algorithm such as Merge or Heap sort. As an example Merge sort could be used to sort the data set to a nearly sorted state and then use insertion sort to finish the sorting, which in theory should speed up the sorting and save some memory use. In addition Insertion sort have a property similar to Selection sort. If it is run N times on an array of data then the first N elements will be sorted, but compared to Selection sort they will not be first N elements of the final sorted array. This can be useful if the use case is sorting of elements which is received from a data stream and they need to be kept sorted in real time \cite{sortingAlgo}.
+
+
+\vspace{0.5cm}
+\subsection{Reflection}
+\label{sec:5.3}
+
+The measurements of the different run-times in our two tests could have been optimized greatly. We have implemented a very basic stopwatch class in Java and we measured the timings from inside the IDE. Furthermore we could have run the sorting algorithms several hundred times instead of the few times they ran. 
+\\
+Practically this was not feasible, even though we would have gotten results that could be used to find standard deviation and mean which would have made outliers apparent, since all computers used for the measurements were our own personal PCs. For a more thorough examination we would follow the advice from Sesoft's paper on \emph{Microbenchmarks in Java and C\#}. \cite{sesoft}
+\newline
+Another interesting thing to measure, could be to implement the  algorithms in more programming languages beside Java and compare the run time of these implementations.  
+
+
+\vspace{0.5cm}
+\subsection{Conclusion}
+\label{sec:5.4}
+The time complexity have a direct impact on the run-time and efficiency of the different algorithms we examined. We saw the same pattern across all PCs in the hardware test. Even with a comparison of Merge sort on the fastest PC and with Trie sort on the slowest PC, showed that the difference in time complexity have a much greater impact on the run-time. 
+\\
+\\
+We also noticed that the algorithms with a greater time complexity, such as the quadratic algorithms, are faster than the linear Trie sort if used on a small data set. The quadratic growth first starts to become a greater efficiency loss than the linear growth after a certain data amount. This can be utilized in a use case with a guaranteed small amount of data to achieve greater sorting efficiency.  

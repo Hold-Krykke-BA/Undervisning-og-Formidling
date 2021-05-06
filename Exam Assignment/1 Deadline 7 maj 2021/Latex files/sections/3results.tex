@@ -1,0 +1,67 @@
+
+The resulting data from the different runs will be presented in tables and all timings will be in milliseconds unless otherwise specified. 
+
+\vspace{0.5cm}
+\subsection{Timings}
+\label{sec:3.1}
+
+We measured the run-time of Heap sort, Merge sort and Trie sort an average of ten times and once for Selection sort and Insertion sort for the timings shown below.
+
+
+\begin{table}[H]
+\rowcolors{2}{gray!25}{white}
+\centering
+
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{c|c|c|c|c|c|}
+\cline{2-6}
+ & Selection Sort & \multicolumn{1}{l|}{Insertion Sort} & \multicolumn{1}{l|}{Heap Sort} & \multicolumn{1}{l|}{Merge Sort} & \multicolumn{1}{l|}{Using a Trie} \\ \hline
+\multicolumn{1}{|c|}{PC1} & 10,073,374ms & 11,625,154ms & 1532ms & 1095ms & 179ms \\ \hline
+\multicolumn{1}{|c|}{PC2} & 6,443,783ms & 9,851,730ms & 937ms & 654ms & \cellcolor[HTML]{9AFF99}87ms \\ \hline
+\multicolumn{1}{|c|}{PC3} & 8,514,312ms & 9,816,525ms & 1422ms & 1067ms & 195ms \\ \hline
+\multicolumn{1}{|c|}{PC4} & 7,590,981ms & 9,774,093ms & 1478ms & 1212ms & 178ms \\ \hline
+\multicolumn{1}{|c|}{PC5} & \cellcolor[HTML]{9AFF99}4,775,843ms & \cellcolor[HTML]{9AFF99}6,293,917ms & \cellcolor[HTML]{9AFF99}760ms & \cellcolor[HTML]{9AFF99}527ms & 128ms \\ \hline
+\multicolumn{1}{|l|}{PC6} & 12,259,456ms & 12,581,059ms & 1952ms & 1455ms & 247ms \\ \hline
+\end{tabular}%
+}
+\caption{Timings for each PC}
+\label{tab:timings1}
+\end{table}
+
+As seen in the table, PC5 is the strongest in four of the five sorts. This isn't the metric we're looking for, but there appears to be a trend in the percentile differences between the various sorts. Below you will see the converted values of Selection Sort and Insertion Sort for easier reading.
+
+\begin{table}[H]
+\centering
+\label{tab:timings2}
+\begin{tabular}{c|cc}
+ & Selection Sort & \multicolumn{1}{l}{Insertion Sort} \\ \hline
+PC1 & 167.88 min & 193.75 min \\
+PC2 & 107.39 min & 164.19 min \\
+PC3 & 141.90 min & 163.60 min \\
+PC4 & 126.51 min & 162.90 min \\
+PC5 & 79.59 min & 104.89 min \\
+\multicolumn{1}{l|}{PC6} & 204.32 min & 209.68 min
+\end{tabular}
+\caption{Selection and Insertion sort converted to minutes}
+\end{table}
+
+\vspace{0.5cm}
+We wanted more data for making direct comparisons between the five algorithms. This was gathered by running the algorithms multiple times, at varying data sizes, on the fastest desktop PC. All runs on Trie, Heap and Merge sort were done ten times. Runs on Selection and Insertion sort were done twice when the data amount was between 40\% and 100\% and ten times for the rest of the data amounts. 
+
+\begin{table}[H]
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{llllllllllllllll}
+\hline
+ Algorithm & \multicolumn{13}{l}{Run-time in milliseconds on varying length of data on PC2}\\ 
+Data size & 0.1 \% & 1 \% & 2 \% & 3 \% & 4 \% & 5 \% & 10 \% & 15 \% & 20 \% & 25 \% & 40 \% & 75 \% & 100 \% \\ \hline
+Insertion & 6 & 173 & 656 & 1536 & 2894 & 4696 & 20,057 & 55,796 & 93,114 & 161,085 & 780,994 & 5,232,485 & 9,851,730 \\
+Selection & 7 & 187 & 753 & 1733 & 3265 & 5794 & 26,506 & 55,744 & 90,749 & 153,894 & 958,245 & 3,800,047 & 6,443,783 \\
+Heap & 2 & 6 & 13 & 34 & 49 & 57 & 81 & 124 & 165 & 190 & 428 & 712 & 937 \\
+Merge & 2 & 5 & 9 & 13 & 21 & 24 & 67 & 164 & 243 & 277 & 409 & 552 & 654 \\
+Trie & 17 & 30 & 36 & 38 & 40 & 41 & 46 & 50 & 52 & 55 & 73 & 79 & 87 \\ \hline
+\end{tabular}
+}
+\caption{Run-times of algorithms on varying data amounts}
+\label{tab:PC2timings}
+\end{table}
+In table~\ref{tab:PC2timings} all run-times of the five sorting algorithms are displayed. 100 \% equals 930778 words of data from the Sorting Shakespeare Assignment \cite{mal3}

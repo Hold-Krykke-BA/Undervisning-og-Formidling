@@ -1,0 +1,55 @@
+
+We implemented the algorithms in Java and measured their performance using all of our available machines, including desktops and laptops, which differ in specifications and age, with the oldest being over 6 years old.
+
+\vspace{0.5cm}
+\subsection{Hardware specs}
+\label{sec:2.1}
+In the two tables below, all of the relevant specifications for the six machines used in our tests can be seen. 
+% uses graphicx to resize to page width
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|l|l|l|}
+\hline
+Name & OS & CPU & RAM & JVM \\ \hline
+PC1 & Windows 10 Pro 64-bit & Intel i7-4770k @ 3.50 GHz 4-core (8) & 16 GB DDR3 @ 1600 MHz & Oracle Corporation 11.0.9 \\ \hline
+PC2 & Windows 10 Pro 64-bit & AMD Ryzen 7 3700X @ 3.60 GHz 8-Core & 16 GB DDR4 @ 3200 MHz & Oracle Corporation 11.0.9 \\ \hline
+PC3 & Windows 10 Pro 64-bit & Intel i5-4460 @ 3.2 GHz 4-core & 8 GB DDR3 @ 1333 MHz & Oracle Corporation 11.0.10 \\ \hline
+\end{tabular}%
+}
+\caption{Desktop hardware setup used for testing}
+\label{tab:hardware1}
+\end{table}
+
+\begin{table}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|l|l|l|}
+\hline
+Name & OS & CPU & RAM & JVM \\ \hline
+PC4 & Windows 10 Pro 64-bit & Intel i5-6300HQ @ 2.3 GHz 4-core & 6 GB DDR4 @ 2133 MHz & Oracle Corporation 11.0.10 \\ \hline
+PC5 & macOS Big Sur 11.3 & Apple M1 & 8GB & HotSpot 23.25-b01 \\ \hline
+PC6 & Windows 10 Home 64-bit & AMD Ryzen 5 3550H, 4-core & 16 GB @ 2100 MHz & Oracle Corporation 11.0.9 \\ \hline
+\end{tabular}%
+}
+\caption{Laptop hardware setup used for testing}
+\label{tab:hardware2}
+\end{table}
+
+For the IDE, all PCs except PC5 used IntelliJ IDEA version 2020.3.2, Build \#IU-203.7148.57. PC5 used Visual Studio Code version 1.55.2. \newline
+
+
+\vspace{0.5cm}
+\subsection{Measurement}
+\label{sec:2.2}
+We measured the algorithms by sorting the complete works of William Shakespeare, as presented in a 6MB text file of 121.762 lines or 5.589.848 characters.\\
+Using Javas \emph{System.nanoTime()} we implemented a Stopwatch class and used it to calculate the running time of the sort. \cite{mal3}\\
+Effectively, the text was loaded into a String array of 930778 elements and the timer was then started, followed by the sorting method using the String array.\\
+We did two types of runs, one where we tested the run-time of each sorting algorithm on the complete data set on all PCs. We ran the \(O(n^2)\) algorithms only once, due to time constraints as these algorithms for most of the PCs took several hours to run, while we ran the other algorithms a few times to make sure the measurements were somewhat reliable.\\
+After this first test, we ran tests of all the sorting algorithms on one PC (PC2) but with varying amounts of data. Due to the generally smaller amount of data, the run-time of the algorithms were significantly shorter which allowed us to run them several times in order to improve the consistency of the measurements. 
+
+
+
+
+
+
